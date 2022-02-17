@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+       xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="heart" class="com.springmodules.autowired.Heart"></bean>
+
+    <bean id="human" class="com.springmodules.autowired.Human" autowire="byName"></bean>
+
+    <!-- com.springmodules.injectingobjects -->
+    <!--<bean id="longBatteryBean"  class="com.springmodules.injectingobjects.LongBatteryRange"></bean>
+    <bean id="shortBatteryBean"  class="com.springmodules.injectingobjects.ShortBatteryRange"></bean>
+
+    <bean id="tesla" class="com.springmodules.injectingobjects.Tesla">
+        <property name="teslaId" value="1"></property>
+        &lt;!&ndash; using 'ref' tag to avoid duplication in bean creation &ndash;&gt;
+        <property name="battery" ref="longBatteryBean"/>
+    </bean>
+
+    <bean id="rivian" class="com.springmodules.injectingobjects.Rivian">
+        &lt;!&ndash; using 'ref' tag to avoid duplication in bean creation &ndash;&gt;
+        <property name="battery" ref="shortBatteryBean"/>
+    </bean>
+
+    <bean id="lucid" class="com.springmodules.injectingobjects.Lucid">
+        &lt;!&ndash; using 'ref' tag to avoid duplication in bean creation &ndash;&gt;
+        <property name="battery" ref="longBatteryBean"/>
+    </bean>-->
+
+    <!--<bean id="verizon" class="com.springmodules.ioc.Verizon"></bean>
+    <bean id="att" class="com.springmodules.ioc.Att"></bean>-->
+
+    <!-- using a setter injection -->
+    <!--<bean id="student" class="com.springmodules.di.Student">
+        <property name="studentName" value="Meepo"></property>
+        <property name="studentId" value="1"></property>
+    </bean>-->
+
+    <!-- using a construction injection -->
+    <!--<bean id="student" class="com.springmodules.di.Student">
+        <constructor-arg name="studentName" value="Meepo" type="java.lang.String"></constructor-arg>
+        <constructor-arg name="studentId" value="1" type="int"></constructor-arg>
+    </bean>-->
+
+</beans>
