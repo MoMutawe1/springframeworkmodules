@@ -1,4 +1,4 @@
-package com.springmodules.autowired;
+package com.springmodules.autowired_qualifier;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

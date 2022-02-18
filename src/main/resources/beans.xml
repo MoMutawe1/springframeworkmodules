@@ -1,13 +1,46 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<beans xmlns = "http://www.springframework.org/schema/beans"
-       xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation = "http://www.springframework.org/schema/beans
-   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="heart" class="com.springmodules.autowired.Heart"></bean>
+    <context:property-placeholder location="kid-info.properties"></context:property-placeholder>
 
-    <bean id="human" class="com.springmodules.autowired.Human" autowire="byName"></bean>
+<!--    <bean id="kidbean" class="com.springmodules.value_required.Kid">
+    <constructor-arg name="name" value="Meepo" type="java.lang.String"></constructor-arg>
+    <constructor-arg name="age" value="1" type="int"></constructor-arg>
+    <constructor-arg name="hobby" value="1" type="java.lang.String"></constructor-arg>
+    </bean>-->
+
+    <context:annotation-config></context:annotation-config>
+    <bean id="kidbean" class="com.springmodules.value_required.Kid">
+        <!-- Reading the property from kid-info.properties -->
+<!--        <property name="name" value="${kid.name}"></property>   -->
+<!--        <property name="age" value="${kid.age}"></property>     -->
+<!--        <property name="hobby" value="${kid.hobby}"></property> -->
+    </bean>
+
+
+    <!-- Apply annotation config -->
+    <!--<context:annotation-config></context:annotation-config>
+
+    <bean id="humanHeart" class="com.springmodules.autowired_qualifier.Heart">
+        <property name="organism" value="human"></property>
+        <property name="numOfHeart" value="1"></property>
+    </bean>
+    <bean id="octpousHeart" class="com.springmodules.autowired_qualifier.Heart">
+        <property name="organism" value="octpous"></property>
+        <property name="numOfHeart" value="3"></property>
+    </bean>
+    <bean id="human" class="com.springmodules.autowired_qualifier.Human"></bean>-->
+
+    <!-- configuring autowire in the xml file -->
+    <!-- <bean id="human" class="com.springmodules.autowired_qualifier.Human" autowire="byName"></bean> -->
 
     <!-- com.springmodules.injectingobjects -->
     <!--<bean id="longBatteryBean"  class="com.springmodules.injectingobjects.LongBatteryRange"></bean>
